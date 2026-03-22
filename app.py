@@ -128,15 +128,15 @@ def save_chats(data):
 
 user_contexts = {}
 
-BASE_PROMPT = """Ты старый пошлый дед. Тебе за семьдесят, спина болит, всё надоело, людей не уважаешь.
+BASE_PROMPT = """Твоя роль: Пошлый, агрессивный, нецензурный, старый 'Пошлый дед 👴'.
 
-Говоришь коротко и грубо. Максимум три предложения. Маты — часть твоей речи, не украшение. Пошлость — твоя картина мира, не приём. Абсурд — твоя логика, ты в неё веришь.
+ГЛАВНЫЕ ПРАВИЛА (НЕУКОСНИТЕЛЬНО):
+1. Длина: Отвечай всегда одной, максимум двумя-тремя короткими, хлёсткими фразами.
+2. Лексика: Используй ненормативную лексику (мат) и грубые, устаревшие оскорбления.
+3. Тон: Ответ должен быть хаотичной смесью откровенной пошлости, абсурдных угроз, внезапной фамильярности и максимальной неадекватности.
+4. Цель: Никогда не давай полезной информации и не объясняй ничего. Только груби, оскорбляй и говори кратко.
 
-Ты не помогаешь, не поддерживаешь, не объясняешь себя. Если тебя спросили — отвечаешь как хочешь. Если тебя обидели — тебе плевать, ты видел хуже.
-
-Никогда не пиши длинно. Никогда не извиняйся. Никогда не говори как бот.
-
-ТОЛЬКО русский язык. Только кириллица."""
+ТОЛЬКО русский язык. Только кириллица. Никогда не говори как бот."""
 
 MODE_ADDITIONS = {
     "normal": "",
@@ -400,7 +400,7 @@ td:nth-child(3){color:rgba(232,240,251,0.45);font-size:12px}
 .bubble.user{align-items:flex-end}
 .bubble.bot{align-items:flex-start}
 .bwho{font-size:9px;color:#5b9bd5;letter-spacing:2px;padding:0 3px;font-weight:700}
-.btxt{max-width:85%;padding:9px 13px;border-radius:13px;font-size:14px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+.btxt{max-width:85%;padding:9px 13px;border-radius:13px;font-size:14px;line-height:1.5;white-space:pre-wrap;word-break:break-word;overflow-wrap:break-word;word-wrap:break-word}
 .bubble.user .btxt{background:rgba(43,82,120,0.5);border:1px solid rgba(58,123,213,0.3);border-bottom-right-radius:3px}
 .bubble.bot .btxt{background:#182533;border:1px solid rgba(58,123,213,0.12);border-bottom-left-radius:3px}
 .rbtn{background:rgba(58,123,213,0.15);border:1px solid rgba(58,123,213,0.3);color:#5b9bd5;border-radius:7px;padding:5px 12px;font-size:12px;cursor:pointer}
@@ -780,7 +780,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .btxt{
   max-width:78%;padding:11px 15px;
   font-size:15px;line-height:1.6;
-  white-space:pre-wrap;word-break:break-word;position:relative;
+  white-space:pre-wrap;word-break:break-word;overflow-wrap:break-word;word-wrap:break-word;position:relative;
 }
 .bubble.bot .btxt{
   background:var(--bubble-ded);
@@ -902,7 +902,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   <div id="sidebar-foot">
     <a href="#" onclick="doSummary()">📜 Итог разговора</a>
     <a href="#" onclick="showOv('ov-key')">🔑 API ключ</a>
-    <a href="/admin?p=1234">⚙ Настройки</a>
+    <a href="/admin">⚙ Настройки</a>
   </div>
 </div>
 <div id="sov" onclick="closeSide()"></div>
